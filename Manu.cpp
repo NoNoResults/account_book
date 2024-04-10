@@ -28,16 +28,18 @@ void AddAccount()
 		switch (x)
 		{
 		case 1:
-			system("cls");
 			Add(Data);
 			break;
 		case 2:
-			return;
+			AddAccountJudge = 0;
+			break;
 		default:
-			cout << "输入错误" << endl;
+			cout << "输入错误,重新输入" << endl;
+			cin.clear();   // 清空缓冲区
+			cin.ignore();
+			continue;
 		}
 	}
-	return;
 }
 
 void FindAccount()
@@ -54,41 +56,20 @@ void FindAccount()
 		switch (x)
 		{
 		case 1:
-			system("cls");
-			cout << "请输入序号" << endl;
-			int index;
-			cin >> index;
-			IndexFind(index, Data);
-			system("pause");
+			IndexFind(Data);
 			break;
 		case 2:
-			system("cls");
-			cout << "请输入日期" << endl;
-			int date;
-			cin >> date;
-			DateFind(date, Data);
-			system("pause");
+			DateFind(Data);
 			break;
 		case 3:
-		{
-			system("cls");
-			cout << "请输入名称" << endl;
-			string name;
-			cin >> name;
-			NameFind(name, Data);
-		}
-		system("pause");
-		break;
+			NameFind(Data);
+			break;
 		case 4:
-			system("cls");
-			cout << "请输入金额" << endl;
-			int amount;
-			cin >> amount;
-			IndexFind(amount, Data);
-			system("pause");
+			AmountFind(Data);
 			break;
 		case 0:
-			return;
+			FindAccountJudge = 0;
+			break;
 		default:
 			cout << "输入错误" << endl;
 		}
@@ -97,7 +78,66 @@ void FindAccount()
 
 void AlterAccount()
 {
+	int AlterAccountJudge = 1;
+	while (AlterAccountJudge)
+	{
+		system("cls");
+		cout << R"(1.查找		2.返回)" << endl;
+		int x1;
+		cin >> x1;
+		switch (x1)
+		{
+		case 1:
+		{
+			int FindAccountJudge = 1;
+			while (FindAccountJudge)
+			{
+				system("cls");
+				cout << R"(1.按序号查找		2.按日期查找
+3.按名称查找		4.按金额查找
+0.返回)" << endl;
+				int x;
+				cin >> x;
+				switch (x)
+				{
+				case 1:
+					if (IndexFind(Data))
+					{
 
+					}
+					break;
+				case 2:
+					if (DateFind(Data) > 1)
+					{
+
+					}
+					break;
+				case 3:
+					if (NameFind(Data) > 1)
+					{
+
+					}
+					break;
+				case 4:
+					if (AmountFind(Data) > 1)
+					{
+
+					}
+					break;
+				case 0:
+					FindAccountJudge = 0;
+					break;
+				default:
+					cout << "输入错误" << endl;
+				}
+			}
+			break; 
+		}
+		case 2:
+			AlterAccountJudge = 0;
+			break;
+		}
+	}
 }
 
 void DeleteAccount()

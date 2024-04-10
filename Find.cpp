@@ -1,8 +1,12 @@
 #include "Account.h"
 #include "AccountData.h"
 
-int IndexFind(const int index, vector<Account>& data)
+int IndexFind(vector<Account>& data)
 {
+	system("cls");
+	cout << "请输入序号" << endl;
+	int index;
+	cin >> index;
 	int adjuge = 0;
 	for (int i = 0; i < data.size(); i++)
 	{
@@ -10,16 +14,21 @@ int IndexFind(const int index, vector<Account>& data)
 		if (account.GetIndex() == index)
 		{
 			cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
-			adjuge++;
+			adjuge = account.GetIndex();
 		}
 	}
 	if (!adjuge)
 		cout << "未找到目标账单" << endl;
+	system("pause");
 	return adjuge;
 }
 
-int DateFind(const int date, vector<Account>& data)
+int DateFind(vector<Account>& data)
 {
+	system("cls");
+	cout << "请输入日期" << endl;
+	int date;
+	cin >> date;
 	int adjuge = 0;
 	for (int i = 0; i < data.size(); i++)
 	{
@@ -32,11 +41,16 @@ int DateFind(const int date, vector<Account>& data)
 	}
 	if (!adjuge)
 		cout << "未找到目标账单" << endl;
+	system("pause");
 	return adjuge;
 }
 
-int NameFind(const string name, vector<Account>& data)
+int NameFind(vector<Account>& data)
 {
+	system("cls");
+	cout << "请输入名称" << endl;
+	string name;
+	cin >> name;
 	int adjuge = 0;
 	for (int i = 0; i < data.size(); i++)
 	{
@@ -49,11 +63,16 @@ int NameFind(const string name, vector<Account>& data)
 	}
 	if (!adjuge)
 		cout << "未找到目标账单" << endl;
+	system("pause");
 	return adjuge;
 }
 
-int AmountFind(const int amount, vector<Account>& data)
+int AmountFind(vector<Account>& data)
 {
+	system("cls");
+	cout << "请输入金额" << endl;
+	int amount;
+	cin >> amount;
 	int adjuge = 0;
 	for (int i = 0; i < data.size(); i++)
 	{
@@ -66,6 +85,7 @@ int AmountFind(const int amount, vector<Account>& data)
 	}
 	if (!adjuge)
 		cout << "未找到目标账单" << endl;
+	system("pause");
 	return adjuge;
 }
 

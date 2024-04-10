@@ -1,7 +1,3 @@
-﻿  AccountData.h
-  Find.cpp
-  Manu.cpp
-  Save&Get.cpp
-  正在生成代码...
-  LINK : 没有找到 D:\project\c++\practice\account_book\x64\Debug\account_book.exe 或上一个增量链接没有生成它；正在执行完全链接
+﻿  Manu.cpp
+D:\project\c++\practice\account_book\Manu.cpp(108,7): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
   account_book.vcxproj -> D:\project\c++\practice\account_book\x64\Debug\account_book.exe

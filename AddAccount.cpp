@@ -4,6 +4,7 @@ using namespace std;
 
 void Add(vector<Account>& data)
 {
+	system("cls");
 	string name, note;
 	int date, amount;
 	char type, AddJudge;
@@ -13,7 +14,8 @@ void Add(vector<Account>& data)
 	while (!(cin >> date))
 	{
 		cout << "输入错误,重新输入" << endl;
-		system("pause");
+		cin.clear();
+		cin.ignore();
 		cin >> date;
 	}
 	cout << "输入金额:(+100 or -100)" << endl;

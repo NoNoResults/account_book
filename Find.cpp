@@ -3,7 +3,6 @@
 
 int IndexFind(vector<Account>& data)
 {
-	system("cls");
 	cout << "ÇëÊäÈëÐòºÅ" << endl;
 	int index;
 	cin >> index;
@@ -13,7 +12,6 @@ int IndexFind(vector<Account>& data)
 		Account account = data[i];
 		if (account.GetIndex() == index)
 		{
-			cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
 			adjuge = account.GetIndex();
 		}
 	}

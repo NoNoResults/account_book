@@ -10,7 +10,7 @@ void PrintManu()
 1.添加账务数据		2.查找账务数据
 3.修改账务数据		4.删除帐务数据
 5.排序			6.显示当前所有账务数据
-7.统计账务数据		8.保存
+7.统计账务数据		
 0.退出
 ---------------------------------------------------
 )" << endl;
@@ -22,7 +22,7 @@ void AddAccount()
 	int AddAccountJudge = 1;
 	while (AddAccountJudge)
 	{
-		cout << R"(1.添加账单		2.返回)" << endl;
+		cout << R"(1.添加账单		0.返回)" << endl;
 		int x;
 		cin >> x;
 		switch (x)
@@ -30,7 +30,7 @@ void AddAccount()
 		case 1:
 			Add(Data);
 			break;
-		case 2:
+		case 0:
 			AddAccountJudge = 0;
 			break;
 		default:
@@ -56,7 +56,7 @@ void FindAccount()
 		switch (x)
 		{
 		case 1:
-			IndexFind(Data);
+			PrintFind(IndexFind(Data), Data);
 			break;
 		case 2:
 			DateFind(Data);
@@ -82,7 +82,7 @@ void AlterAccount()
 	while (AlterAccountJudge)
 	{
 		system("cls");
-		cout << R"(1.查找		2.返回)" << endl;
+		cout << R"(1.查找		0.返回)" << endl;
 		int x1;
 		cin >> x1;
 		switch (x1)
@@ -101,28 +101,73 @@ void AlterAccount()
 				switch (x)
 				{
 				case 1:
-					if (IndexFind(Data))
+				{
+					int a = IndexFind(Data);
+					if (a)
 					{
-
+						Alter(a, Data);
 					}
 					break;
+				}
 				case 2:
-					if (DateFind(Data) > 1)
+				{
+					int a = DateFind(Data);
+					if (a > 1)
 					{
-
+						cout << "结果不止一个,请继续查找"  << endl;
+						system("pause");
+						int b = IndexFind(Data);
+						if (b)
+						{
+							Alter(b, Data);
+						}
 					}
+					if (a == 1)
+					{
+						int b = IndexFind(Data);
+						Alter(b, Data);
+					}
+				}
 					break;
 				case 3:
-					if (NameFind(Data) > 1)
+				{
+					int a = NameFind(Data);
+					if (a > 1)
 					{
-
+						cout << "结果不止一个,请继续查找" << endl;
+						system("pause");
+						int b = IndexFind(Data);
+						if (b)
+						{
+							Alter(b, Data);
+						}
 					}
+					if (a == 1)
+					{
+						int b = IndexFind(Data);
+						Alter(b, Data);
+					}
+				}
 					break;
 				case 4:
-					if (AmountFind(Data) > 1)
+				{
+					int a = AmountFind(Data);
+					if (a > 1)
 					{
-
+						cout << "结果不止一个,请继续查找" << endl;
+						system("pause");
+						int b = IndexFind(Data);
+						if (b)
+						{
+							Alter(b, Data);
+						}
 					}
+					if (a == 1)
+					{
+						int b = IndexFind(Data);
+						Alter(b, Data);
+					}
+				}
 					break;
 				case 0:
 					FindAccountJudge = 0;
@@ -133,7 +178,7 @@ void AlterAccount()
 			}
 			break; 
 		}
-		case 2:
+		case 0:
 			AlterAccountJudge = 0;
 			break;
 		}

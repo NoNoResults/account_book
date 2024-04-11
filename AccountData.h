@@ -16,7 +16,12 @@ int NameFind(vector<Account>& data);
 int DateFind(vector<Account>& data);
 int IndexFind(vector<Account>& data);
 
-void Alter(vector<Account>& data);
+void Alter(int index, vector<Account>& data);
+void AlterName(int index, vector<Account>& data);
+void AlterDate(int index, vector<Account>& data);
+void AlterAmount(int index, vector<Account>& data);
+void AlterType(int index, vector<Account>& data);
+void AlterNote(int index, vector<Account>& data);
 
 
 extern vector<Account> Data;

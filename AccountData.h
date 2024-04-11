@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 void Add(vector<Account>& data);
 void Print(vector<Account>& data);
@@ -23,5 +24,12 @@ void AlterAmount(int index, vector<Account>& data);
 void AlterType(int index, vector<Account>& data);
 void AlterNote(int index, vector<Account>& data);
 
+void Delete(int index, vector<Account>& data);
+
+void DateSequence(vector<Account>& data);
+void NameSequence(vector<Account>& data);
+void AmountSequence(vector<Account>& data);
+
+void ResetIndex(vector<Account>& data);
 
 extern vector<Account> Data;

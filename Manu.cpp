@@ -35,7 +35,8 @@ void AddAccount()
 			break;
 		default:
 			cout << "输入错误,重新输入" << endl;
-			cin.clear();   // 清空缓冲区
+			system("pause");
+			cin.clear();
 			cin.ignore();
 			continue;
 		}
@@ -72,6 +73,10 @@ void FindAccount()
 			break;
 		default:
 			cout << "输入错误" << endl;
+			system("pause");
+			cin.clear();
+			cin.ignore();
+			continue;
 		}
 	}
 }
@@ -82,7 +87,8 @@ void AlterAccount()
 	while (AlterAccountJudge)
 	{
 		system("cls");
-		cout << R"(1.查找		0.返回)" << endl;
+		cout << R"(请先查找要修改的账单
+1.查找		0.返回)" << endl;
 		int x1;
 		cin >> x1;
 		switch (x1)
@@ -93,11 +99,14 @@ void AlterAccount()
 			while (FindAccountJudge)
 			{
 				system("cls");
-				cout << R"(1.按序号查找		2.按日期查找
+				cout << R"(请先查找要修改的账单
+1.按序号查找		2.按日期查找
 3.按名称查找		4.按金额查找
 0.返回)" << endl;
 				int x;
 				cin >> x;
+				cin.clear();
+				cin.ignore();
 				switch (x)
 				{
 				case 1:
@@ -114,7 +123,7 @@ void AlterAccount()
 					int a = DateFind(Data);
 					if (a > 1)
 					{
-						cout << "结果不止一个,请继续查找"  << endl;
+						cout << "结果不止一个,请继续查找" << endl;
 						system("pause");
 						int b = IndexFind(Data);
 						if (b)
@@ -128,7 +137,7 @@ void AlterAccount()
 						Alter(b, Data);
 					}
 				}
-					break;
+				break;
 				case 3:
 				{
 					int a = NameFind(Data);
@@ -148,7 +157,7 @@ void AlterAccount()
 						Alter(b, Data);
 					}
 				}
-					break;
+				break;
 				case 4:
 				{
 					int a = AmountFind(Data);
@@ -168,12 +177,16 @@ void AlterAccount()
 						Alter(b, Data);
 					}
 				}
-					break;
+				break;
 				case 0:
 					FindAccountJudge = 0;
 					break;
 				default:
 					cout << "输入错误" << endl;
+					system("pause");
+					cin.clear();
+					cin.ignore();
+					continue;
 				}
 			}
 			break; 
@@ -181,13 +194,137 @@ void AlterAccount()
 		case 0:
 			AlterAccountJudge = 0;
 			break;
+		default:
+			cout << "输入错误" << endl;
+			system("pause");
+			cin.clear();
+			cin.ignore();
+			continue;
 		}
 	}
 }
 
 void DeleteAccount()
 {
-
+	int DeleteAccountJudge = 1;
+	while (DeleteAccountJudge)
+	{
+		system("cls");
+		cout << R"(请先查找要删除的账单
+1.查找		0.返回)" << endl;
+		int x1;
+		cin >> x1;
+		switch (x1)
+		{
+		case 1:
+		{
+			int FindAccountJudge = 1;
+			while (FindAccountJudge)
+			{
+				system("cls");
+				cout << R"(请先查找要删除的账单
+1.按序号查找		2.按日期查找
+3.按名称查找		4.按金额查找
+0.返回)" << endl;
+				int x;
+				cin >> x;
+				cin.clear();
+				cin.ignore();
+				switch (x)
+				{
+				case 1:
+				{
+					int a = IndexFind(Data);
+					if (a)
+					{
+						Delete(a, Data);
+					}
+					break;
+				}
+				case 2:
+				{
+					int a = DateFind(Data);
+					if (a > 1)
+					{
+						cout << "结果不止一个,请继续查找" << endl;
+						system("pause");
+						int b = IndexFind(Data);
+						if (b)
+						{
+							Delete(b, Data);
+						}
+					}
+					if (a == 1)
+					{
+						int b = IndexFind(Data);
+						Delete(b, Data);
+					}
+				}
+				break;
+				case 3:
+				{
+					int a = NameFind(Data);
+					if (a > 1)
+					{
+						cout << "结果不止一个,请继续查找" << endl;
+						system("pause");
+						int b = IndexFind(Data);
+						if (b)
+						{
+							Delete(b, Data);
+						}
+					}
+					if (a == 1)
+					{
+						int b = IndexFind(Data);
+						Delete(b, Data);
+					}
+				}
+				break;
+				case 4:
+				{
+					int a = AmountFind(Data);
+					if (a > 1)
+					{
+						cout << "结果不止一个,请继续查找" << endl;
+						system("pause");
+						int b = IndexFind(Data);
+						if (b)
+						{
+							Delete(b, Data);
+						}
+					}
+					if (a == 1)
+					{
+						int b = IndexFind(Data);
+						Delete(b, Data);
+					}
+				}
+				break;
+				case 0:
+					FindAccountJudge = 0;
+					break;
+				default:
+					cout << "输入错误" << endl;
+					system("pause");
+					cin.clear();
+					cin.ignore();
+					continue;
+				}
+			}
+			break;
+		}
+		case 0:
+			DeleteAccountJudge = 0;
+			break;
+		default:
+			cout << "输入错误" << endl;
+			system("pause");
+			cin.clear();
+			cin.ignore();
+			continue;
+		}
+	}
 }
 
 void PrintAccount()
@@ -198,7 +335,36 @@ void PrintAccount()
 
 void SequenceAccount()
 {
-
+	int SequenceAccountJudge = 1;
+	while (SequenceAccountJudge)
+	{
+		system("cls");
+		cout << R"(如何排序
+1.按日期排序			2.按名称排序			3.按金额排序
+0.不排了)" << endl;
+		int x;
+		cin >> x;
+		switch (x)
+		{
+		case 1:
+			DateSequence(Data);
+			break;
+		case 2:
+			NameSequence(Data);
+			break;
+		case 3:
+			AmountSequence(Data);
+			break;
+		case 0:
+			SequenceAccountJudge = 0;
+			break;
+		default:
+			cout << "输入错误" << endl;
+			cin.clear();
+			cin.ignore();
+			continue;
+		}
+	}
 }
 
 void CountAccount()

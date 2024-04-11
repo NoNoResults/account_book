@@ -36,6 +36,12 @@
     <ClCompile Include="Alter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Delete.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h">

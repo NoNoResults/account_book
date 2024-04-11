@@ -6,7 +6,8 @@ void Add(vector<Account>& data)
 {
 	system("cls");
 	string name, note;
-	int date, amount;
+	int date;
+	double amount;
 	char type, AddJudge;
 	cout << "ÊäÈëÕËµ¥Ãû:" << endl;
 	cin >> name;

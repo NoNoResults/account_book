@@ -32,4 +32,6 @@ void AmountSequence(vector<Account>& data);
 
 void ResetIndex(vector<Account>& data);
 
+void Count(vector<Account>& data);
+
 extern vector<Account> Data;

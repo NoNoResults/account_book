@@ -369,7 +369,7 @@ void SequenceAccount()
 
 void CountAccount()
 {
-
+	Count(Data);
 }
 
 void SaveAccount(vector<Account>& data)

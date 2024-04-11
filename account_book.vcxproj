@@ -130,6 +130,7 @@
     <ClCompile Include="AccountData.h" />
     <ClCompile Include="AddAccount.cpp" />
     <ClCompile Include="Alter.cpp" />
+    <ClCompile Include="Count.cpp" />
     <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Find.cpp" />
     <ClCompile Include="Manu.cpp" />

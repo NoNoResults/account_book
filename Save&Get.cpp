@@ -34,7 +34,8 @@ void Get(const string& filename, vector<Account>& data)
 	file.open(filename, ios::in);
 	if (file.is_open())
 	{
-		int index, date, amount;
+		int index, date;
+		double amount;
 		string name, note, tmp;
 		char type;
 		while (getline(file, tmp))

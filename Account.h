@@ -8,13 +8,13 @@ private:
 	int _index;//序号
 	int _date;//日期
 	char _type;//类型
-	int _amount;//金额
+	double _amount;//金额
 	string _name;//名称
 	string _note;//备注
 
 public:
 	Account(){}
-	Account(const int& date, const char& type, const int& amount, const string& name)
+	Account(const int& date, const char& type, const double& amount, const string& name)
 		:_date(date), _type(type), _amount(amount), _name(name), _note("NULL"){}
 
 	void SetIndex(int& index)
@@ -52,7 +52,7 @@ public:
 		_amount = amount;
 	}
 
-	int GetAmount()
+	double GetAmount()
 	{
 		return _amount;
 	}

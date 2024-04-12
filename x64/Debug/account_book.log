@@ -1,6 +1,2 @@
-﻿  AccountData.h
-  Count.cpp
-  Manu.cpp
-  Save&Get.cpp
-  正在生成代码...
+﻿  Sequence.cpp
   account_book.vcxproj -> D:\project\c++\practice\account_book\x64\Debug\account_book.exe

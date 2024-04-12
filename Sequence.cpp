@@ -18,6 +18,10 @@ bool CompareAmount(Account a, Account b)
 
 void DateSequence(vector<Account>& data)
 {
+	cout << "1.ÉýÐò			2.½µÐò" << endl;
+	int x;
+	cin >> x;
+
 	sort(data.begin(), data.end(), CompareDate);
 	ResetIndex(data);
 	cout << "ÅÅÍêÁË" << endl;

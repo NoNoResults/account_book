@@ -17,7 +17,6 @@ void Add(vector<Account>& data)
 		cout << "输入错误,重新输入" << endl;
 		cin.clear();
 		cin.ignore();
-		cin >> date;
 	}
 	cout << "输入金额:(+100 or -100)" << endl;
 	cin >> type >> amount;

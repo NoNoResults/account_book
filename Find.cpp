@@ -16,8 +16,10 @@ int IndexFind(vector<Account>& data)
 		}
 	}
 	if (!adjuge)
+	{
 		cout << "未找到目标账单" << endl;
-	system("pause");
+		system("pause");
+	}
 	return adjuge;
 }
 
@@ -87,7 +89,7 @@ int AmountFind(vector<Account>& data)
 	return adjuge;
 }
 
-void PrintFind(const int index, vector<Account>& data)
+void PrintFind(int index, vector<Account>& data)
 {
 	for (int i = 1; i < data.size(); i++)
 	{

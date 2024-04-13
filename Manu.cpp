@@ -57,8 +57,15 @@ void FindAccount()
 		switch (x)
 		{
 		case 1:
-			PrintFind(IndexFind(Data), Data);
+		{
+			int a = IndexFind(Data);
+			if (a)
+			{
+				PrintFind(a, Data);
+				system("pause");
+			}
 			break;
+		}
 		case 2:
 			DateFind(Data);
 			break;

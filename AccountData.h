@@ -1,5 +1,6 @@
 #pragma once
 #include "Account.h"
+#include "User.h"
 #include <vector>
 #include <iostream>
 #include <fstream>

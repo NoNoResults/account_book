@@ -12,8 +12,8 @@ void DeleteAccount();
 void PrintAccount();
 void SequenceAccount();
 void CountAccount();
-void SaveAccount(vector<Account>& data);
-void Start();
+void SaveAccount(const string& filename, vector<Account>& data);
+void Start(const string& filename);
 void UserManu();
 
 

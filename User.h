@@ -1,5 +1,6 @@
 #pragma once
 #include "AccountData.h"
+#include <vector>
 using namespace std;
 
 class User
@@ -50,8 +51,9 @@ public:
 };
 
 extern vector<User> Userdata;
+extern string USERNAME;
 
 void SaveUserdata(const string& filename, vector<User>& userdata);
 void GetUserdata(const string& filename, vector<User>& userdata);
-bool Register(vector<User>& userdata);
-bool Login(vector<User>& userdata);
+bool Register(string& USERNAME, vector<User>& userdata);
+bool Login(string& USERNAME, vector<User>& userdata);

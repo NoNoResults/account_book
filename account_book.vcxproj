@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="Define.h" />
     <ClInclude Include="Manu.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>

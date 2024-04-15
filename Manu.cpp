@@ -12,7 +12,7 @@ void PrintManu()
 3.修改账务数据		4.删除帐务数据
 5.排序			6.显示当前所有账务数据
 7.统计账务数据		8.保存	
-0.退出
+9.退出登录		0.退出
 ---------------------------------------------------
 )" << endl;
 }
@@ -380,16 +380,17 @@ void CountAccount()
 	Count(Data);
 }
 
-void SaveAccount(vector<Account>& data)
+void SaveAccount(const string& filename,vector<Account>& data)
 {
-	Save("data.txt", data);
+	Save(filename, data);
 }
 
-void Start()
+void Start(const string& USERNAME)
 {
 
-	Get("data.txt", Data);
-	while (true)
+	Get(USERNAME + ".txt", Data);
+	int StartJudge = 1;
+	while (StartJudge)
 	{
 		PrintManu();
 		int x;
@@ -418,7 +419,11 @@ void Start()
 			CountAccount();
 			break;
 		case 8:
-			SaveAccount(Data);
+			SaveAccount(USERNAME + ".txt", Data);
+			break;
+		case 9:
+			StartJudge = 0;
+			Data.clear();
 			break;
 		case 0:
 			cout << "再见" << endl;
@@ -441,17 +446,17 @@ void UserManu()
 		switch (x)
 		{
 		case 1:
-			if (Login(Userdata))
+			if (Login(USERNAME, Userdata))
 			{
 				SaveUserdata("userdata.txt", Userdata);
-				Start();
+				Start(USERNAME);
 			}
 			break;
 		case 2:
-			if (Register(Userdata))
+			if (Register(USERNAME, Userdata))
 			{
 				SaveUserdata("userdata.txt", Userdata);
-				Start();
+				Start(USERNAME);
 			}
 			break;
 		case 0:

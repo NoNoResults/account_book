@@ -2,14 +2,12 @@
 #include "AccountData.h"
 using namespace std;
 
-bool Register(vector<User>& userdata)
+bool Register(string& USERNAME, vector<User>& userdata)
 {
 	system("cls");
 	string username, password;
 	cout << "请输入用户名" << endl;
 	cin >> username;
-	cout << "请输入密码" << endl;
-	cin >> password;
 	for (int i = 0; i < userdata.size(); i++)
 	{
 		if (userdata[i].CheckUsername(username))
@@ -19,14 +17,17 @@ bool Register(vector<User>& userdata)
 			return false;
 		}
 	}
+	cout << "请输入密码" << endl;
+	cin >> password;
 	User a(username, password);
 	userdata.push_back(a);
 	cout << "注册成功" << endl;
+	USERNAME = username;
 	system("pause");
 	return true;
 }
 
-bool Login(vector<User>& userdata)
+bool Login(string& USERNAME, vector<User>& userdata)
 {
 	system("cls");
 	string username, password;
@@ -38,7 +39,8 @@ bool Login(vector<User>& userdata)
 	{
 		if (userdata[i].CheckUsername(username) && userdata[i].CheckPassword(password))
 		{
-			cout << "登陆成功" << endl;
+			cout << "登录成功" << endl;
+			USERNAME = username;
 			system("pause");
 			return true;
 		}

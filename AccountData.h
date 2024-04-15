@@ -10,8 +10,11 @@ void Add(vector<Account>& data);
 void Print(vector<Account>& data);
 void Save(const string& filename, vector<Account>& data);
 void Get(const string& filename, vector<Account>& data);
+bool CheckDate(int date);
+bool is_leap(int year);
 
 void PrintFind(const int index, vector<Account>& data);
+void Print(Account account);
 int AmountFind(vector<Account>& data);
 int NameFind(vector<Account>& data);
 int DateFind(vector<Account>& data);
@@ -35,3 +38,4 @@ void ResetIndex(vector<Account>& data);
 void Count(vector<Account>& data);
 
 extern vector<Account> Data;
+extern int days[13];

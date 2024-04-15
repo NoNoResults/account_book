@@ -35,7 +35,7 @@ int DateFind(vector<Account>& data)
 		Account account = data[i];
 		if (account.GetDate() == date)
 		{
-			cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
+			Print(data[i]);
 			adjuge++;
 		}
 	}
@@ -57,7 +57,7 @@ int NameFind(vector<Account>& data)
 		Account account = data[i];
 		if (account.GetName() == name)
 		{
-			cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
+			Print(data[i]);
 			adjuge++;
 		}
 	}
@@ -79,7 +79,7 @@ int AmountFind(vector<Account>& data)
 		Account account = data[i];
 		if (account.GetAmount() == amount)
 		{
-			cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
+			Print(data[i]);
 			adjuge++;
 		}
 	}
@@ -96,7 +96,12 @@ void PrintFind(int index, vector<Account>& data)
 		Account account = data[i];
 		if (account.GetIndex() == index)
 		{
-			cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
+			Print(data[i]);
 		}
 	}
+}
+
+void Print(Account account)
+{
+	cout << account.GetIndex() << ". 名称: " << account.GetName() << " 金额: " << account.GetType() << account.GetAmount() << " 日期: " << account.GetDate() << " 备注: " << account.GetNote() << endl;
 }

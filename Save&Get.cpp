@@ -6,7 +6,7 @@ void Print(vector<Account>& data)
 	for (int i = 0; i < data.size(); i++)
 	{
 		Account account = data[i];
-		cout << account.GetIndex() << ". " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
+		Print(data[i]);
 	}
 	system("pause");
 }
@@ -23,6 +23,7 @@ void Save(const string& filename, vector<Account>& data)
 			file << account.GetIndex() << " " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
 		}
 		cout << "±£´æ³É¹¦" << endl;
+		system("pause");
 		file.close();
 	}
 

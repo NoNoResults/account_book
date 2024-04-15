@@ -12,7 +12,7 @@ void Add(vector<Account>& data)
 	cout << "输入账单名:" << endl;
 	cin >> name;
 	cout << R"(输入日期:(20240101))" << endl;
-	while (!(cin >> date))
+	while (!(cin >> date) || !CheckDate(date))
 	{
 		cout << "输入错误,重新输入" << endl;
 		cin.clear();
@@ -38,4 +38,24 @@ void Add(vector<Account>& data)
 	a.SetIndex(index);
 	data.push_back(a);
 	return;
+}
+
+bool CheckDate(int date)
+{
+	int x = date;
+	int day = x % 100;
+	x /= 100;
+	int month = x % 100;
+	x /= 100;
+	int year = x;
+	if (year > 0 && year < 10000 && month > 0 && month < 13 && day > 0 && day <= (days[month] + is_leap(year)))
+		return true;
+	return false;
+}
+
+bool is_leap(int year)
+{
+	if (year % 4 == 0 && year % 100 != 0 || year / 400 == 0)
+		return 1;
+	return 0;
 }

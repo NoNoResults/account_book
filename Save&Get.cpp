@@ -19,8 +19,7 @@ void Save(const string& filename, vector<Account>& data)
 	{
 		for (int i = 0; i < data.size(); i++)
 		{
-			Account account = data[i];
-			file << account.GetIndex() << " " << account.GetName() << " " << account.GetType() << account.GetAmount() << " " << account.GetDate() << " " << account.GetNote() << endl;
+			file << data[i].GetIndex() << " " << data[i].GetName() << " " << data[i].GetType() << data[i].GetAmount() << " " << data[i].GetDate() << " " << data[i].GetNote() << endl;
 		}
 		cout << "±£´æ³É¹¦" << endl;
 		system("pause");

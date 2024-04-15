@@ -13,4 +13,7 @@ void PrintAccount();
 void SequenceAccount();
 void CountAccount();
 void SaveAccount(vector<Account>& data);
+void Start();
+void UserManu();
+
 

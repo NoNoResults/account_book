@@ -7,6 +7,7 @@ void Alter(int index, vector<Account>& data)
 	int AlterJudge = 1;
 	while (AlterJudge)
 	{
+		Print(data[index - 1]);
 		cout << R"(要修改什么
 1.名称		2.日期		3.金额
 4.收(支)		5.备注		0.不改了)" << endl;

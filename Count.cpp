@@ -6,9 +6,19 @@ void Count(vector<Account>& data)
 	system("cls");
 	cout << "请输入起始日期" << endl;
 	int date1, date2;
-	cin >> date1;
+	while (!(cin >> date1) || !CheckDate(date1))
+	{
+		cout << "输入错误,重新输入" << endl;
+		cin.clear();
+		cin.ignore();
+	}
 	cout << "请输入终止日期" << endl;
-	cin >> date2;
+	while (!(cin >> date2) || !CheckDate(date2))
+	{
+		cout << "输入错误,重新输入" << endl;
+		cin.clear();
+		cin.ignore();
+	}
 	double income = 0, expense = 0, sum = 0;
 	for (int i = 0; i < data.size(); i++)
 	{

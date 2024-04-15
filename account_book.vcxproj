@@ -133,6 +133,7 @@
     <ClCompile Include="Count.cpp" />
     <ClCompile Include="Delete.cpp" />
     <ClCompile Include="Find.cpp" />
+    <ClCompile Include="User.cpp" />
     <ClCompile Include="Manu.cpp" />
     <ClCompile Include="mian.cpp" />
     <ClCompile Include="Save&amp;Get.cpp" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="Manu.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

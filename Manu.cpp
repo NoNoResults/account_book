@@ -1,5 +1,6 @@
 #include "Manu.h"
 #include "AccountData.h"
+#include "User.h"
 using namespace std;
 
 void PrintManu()
@@ -382,4 +383,86 @@ void CountAccount()
 void SaveAccount(vector<Account>& data)
 {
 	Save("data.txt", data);
+}
+
+void Start()
+{
+
+	Get("data.txt", Data);
+	while (true)
+	{
+		PrintManu();
+		int x;
+		cin >> x;
+		switch (x)
+		{
+		case 1:
+			AddAccount();
+			break;
+		case 2:
+			FindAccount();
+			break;
+		case 3:
+			AlterAccount();
+			break;
+		case 4:
+			DeleteAccount();
+			break;
+		case 5:
+			SequenceAccount();
+			break;
+		case 6:
+			PrintAccount();
+			break;
+		case 7:
+			CountAccount();
+			break;
+		case 8:
+			SaveAccount(Data);
+			break;
+		case 0:
+			cout << "再见" << endl;
+			system("pause");
+			exit(0);
+		}
+	}
+}
+
+void UserManu()
+{
+	GetUserdata("userdata.txt", Userdata);
+	while (true)
+	{
+		system("cls");
+		cout << R"(1.登录		2.注册
+0.退出)" << endl;
+		int x;
+		cin >> x;
+		switch (x)
+		{
+		case 1:
+			if (Login(Userdata))
+			{
+				SaveUserdata("userdata.txt", Userdata);
+				Start();
+			}
+			break;
+		case 2:
+			if (Register(Userdata))
+			{
+				SaveUserdata("userdata.txt", Userdata);
+				Start();
+			}
+			break;
+		case 0:
+			cout << "再见" << endl;
+			system("pause");
+			exit(0);
+		default:
+			cout << "输入错误" << endl;
+			cin.clear();
+			cin.ignore();
+			continue;
+		}
+	}
 }
